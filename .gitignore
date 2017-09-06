@@ -1,0 +1,7 @@
+*.php
+*.jpg
+*.jpeg
+*.png
+*.gif
+.DS_Store
+images/.DS_Store
