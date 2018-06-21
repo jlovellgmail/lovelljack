@@ -1,0 +1,55 @@
+.menu {
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: white;
+	font-size: 20px;
+	display: table;
+	font-weight: 100;
+	font-size: 20px;
+	width: 100%;
+	text-align: left;
+}
+.menu .name {
+	display: inline-block;
+}
+.menu .name a {
+	color: black;
+	font-weight: 600;
+	letter-spacing: initial;
+    font-size: 22px;
+}
+.menu .wrap {
+	display: table-cell;
+	vertical-align: middle;
+	padding-left: 29px;
+	padding-right: 24px;
+	padding-top: 21px;
+	padding-bottom: 13px;
+}
+.menuitem {
+	display: inline-block;
+    /*margin-left: 5px;*/
+    /*padding-left: 20px;*/
+    float: right;
+}
+.menuitem a {
+	color: black;
+	font-weight: 400;
+	font-size: 14px;
+}
+.menuitem a.notfirst {
+	margin-left: 20px;
+}
+
+
+.menu .menuitem a, .menu .menuitem a:visited, .menu .menuitem a:active {
+	text-decoration: initial;
+}
+.menu .name a, .menu .name a:visited, .menu .name a:active {
+	text-decoration: initial;
+}
+
+
+
+
