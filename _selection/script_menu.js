@@ -14,6 +14,8 @@ function menu() {
 		.append("a").attr("href", "/")
 		.text("Jack Lovell")
 		;
+
+	/*
 	var menuitems = 
 		wrap.append("div").attr("class", "menuitem tk-aktiv-grotesk")
 		;
@@ -25,6 +27,8 @@ function menu() {
 		.append("a").attr("href", "contact.html").attr("class", "notfirst")
 		.text("contact")
 		;
+	*/
+	
 }
 
 

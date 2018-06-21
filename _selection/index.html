@@ -1,7 +1,6 @@
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">	
-	<meta name="google-site-verification" content="7FqfYuvuXDPOCU_PxnHXgjAqWhpqlKl38pFWH3RWEhQ" />
 
 	<meta property='og:title' content='Jack Lovell Portfolio' />
 	<meta property="og:image" content="http://jl646.com/images/linkedinpreview.jpg" />
@@ -9,51 +8,21 @@
 	<meta property='og:url' content='http://jl646.com/project_visual.html' />
 
 
-	<script src="https://use.typekit.net/jwb7vmj.js"></script>
-	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	<script src="libraries/jquery-2.1.0.min.js"></script>
 	<script src="libraries/d3.min.js"></script>
 
 
 	<link rel="stylesheet" href="style.css">
-	
-	<!-- <link rel="stylesheet" href="style_page.css"> -->
 	<link rel="stylesheet" href="style_page_visual.css">
 	<link rel="stylesheet" href="style_menu.css">
-	
-	<!-- <script src="script_page.js"></script> -->
 	<script src="script_menu.js"></script>
 	<script src="script_visual_blowup.js"></script>
 
 
 	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-	  ga('create', 'UA-106385849-1', 'auto');
-	  ga('send', 'pageview');
-
-	</script>
-
-
-
-	<!-- for visual page -->
-	<script>
 		$(document).ready(function(){
-			d3.selectAll(".masonry-layout__panel-content img").attr("onclick", "attribute_check_then_blowup(this)");
+			d3.selectAll(".masonry-layout__panel-content img").attr("onclick", "blowup(this.src)");
 		});
-		function attribute_check_then_blowup(this_arg){
-			var attr = $(this_arg).attr("data-maxwidth");
-			// For some browsers, `attr` is undefined; for others `attr` is false.  Check for both.
-			if (typeof attr !== typeof undefined && attr !== false) {
-			    blowup(this_arg.src, 1200);
-			}
-			else {
-				blowup(this_arg.src);
-			}
-		}
 	</script>
 
 
@@ -62,11 +31,12 @@
 <body class="pageBody visual">
 
 
-	<div class="title museo tk-museo">
-		Emails and Digital Ads
+	<!--
+	<div class="title">
+		Jack Lovell
 	</div>
+	-->
 
-	<!-- <div class="pageContent"></div> -->	
 	<div class="pageContent">
 		
 
@@ -79,238 +49,66 @@
 			<!-- -------------------------- -->
 			<!-- -------------------------- -->
 			<!-- col 1 -->
-
-
 			<div class="masonry-layout__panel">
 				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/visual_20171221_Tech_DigitalLastMinuteDeals.jpg">
+					<img src="http://lovelljack.com/images/Flowers_1500.jpg">
 					<div class="caption">
-						Holiday Promotion
+						<i>Flowers</i>, 2017, colored pencil on paper, 21.1 x 19.4 in.
 					</div>
 				</div>
 			</div>
 			<div class="masonry-layout__panel">
 				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/visual_20171202_Lifestyle_cyber_week.jpg">
+					<img src="http://lovelljack.com/images/Bent_Shape.jpg">
 					<div class="caption">
-						Cyber Week
+						<i>Bent Shape</i>, 2008, charcoal on paper, 23 x 31 in.
 					</div>
 				</div>
 			</div>
 			<div class="masonry-layout__panel">
 				<div class="masonry-layout__panel-content">
-					<!--
-					<img src="http://jl646.com/images/page_images/20180412_lifestyle_xeric_00.jpg">
-					<img src="http://jl646.com/images/page_images/20180412_lifestyle_xeric_01.gif">
-					<img src="http://jl646.com/images/page_images/20180412_lifestyle_xeric_02.jpg">
-					-->
-					<img src="http://jl646.com/images/page_images/20180412_lifestyle_xeric_PREVIEW.jpg">
+					<img src="http://lovelljack.com/images/Girl_900.jpg">
 					<div class="caption">
-						Xeric Watch Promotion
+						<i>Girl</i>, ink and pencil on paper
 					</div>
 				</div>
 			</div>
 			<div class="masonry-layout__panel">
 				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/20180328_stackskills_ANIMATION_600.gif">
+					<img src="http://lovelljack.com/images/torso_900.jpg">
 					<div class="caption">
-						Social Media Ad
+						<i>Torso</i>, 2016, ink and graphite on paper, 22 x 21 in.
 					</div>
 				</div>
 			</div>
 			<div class="masonry-layout__panel">
 				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/20180216_stacksocial_vpn_unlimited_display_ad_336x280.gif">
+					<img src="http://lovelljack.com/images/2001.jpg">
 					<div class="caption">
-						Social Media Ad
+						<i>2001</i>, graphite on paper
 					</div>
 				</div>
 			</div>
 			<div class="masonry-layout__panel">
 				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/visual_20180101_Lifestyle_NewYearNewDeals.gif">
+					<img src="http://lovelljack.com/images/shuttle.jpg">
 					<div class="caption">
-						New Years Promotion
-					</div>
-				</div>
-			</div>
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/visual_20171211_lifestyle_GreenMonday_PM_SiteWide_00.jpg">
-					<div class="gap"></div>
-					<img src="http://jl646.com/images/page_images/visual_20171211_lifestyle_GreenMonday_PM_SiteWide_03.jpg">
-					<div class="gap"></div>
-					<img src="http://jl646.com/images/page_images/visual_20171212_lifestyle_GreenMonday_DailyDeals.jpg">
-					<div class="caption">
-						Green Monday
-					</div>
-				</div>
-			</div>
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/visual_20171113_lifestyle_doorbusters_day_1.jpg">
-					<!--
-					<div class="gap"></div>
-					<img src="http://jl646.com/images/page_images/20171113_lifestyle_doorbusters_day_2.jpg">
-					<div class="gap"></div>
-					<img src="http://jl646.com/images/page_images/20171113_lifestyle_doorbusters_day_3.jpg">
-					<div class="gap"></div>
-					<img src="http://jl646.com/images/page_images/20171113_lifestyle_doorbusters_day_4.jpg">
-					<div class="gap"></div>
-					<img src="http://jl646.com/images/page_images/20171113_lifestyle_doorbusters_day_5.jpg">
-					-->
-					<div class="caption">
-						Doorbusters Sale
-					</div>
-				</div>
-			</div>
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/frames-from-timeline.gif">
-					<div class="caption">
-						Holiday Sale
-					</div>
-				</div>
-			</div>
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/20180308_lifestlye_complete_digital_marketing_course_preview.jpg">
-					<div class="caption">
-						Digital Marketing Bundle
-					</div>
-				</div>
-			</div>
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/20180306_lifestyle_comp_tia_preview.jpg">
-					<div class="caption">
-						CompTIA Certification Bundle
-					</div>
-				</div>
-			</div>
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/20171128_Lifestyle_cyber_week.jpg">
-					<div class="caption">
-						Cyber Week
-					</div>
-				</div>
-			</div>
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/20171129_Lifestyle_cyber_week.jpg">
-					<div class="caption">
-						Cyber Week
-					</div>
-				</div>
-			</div>
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/20171130_Lifestyle_cyber_week.jpg">
-					<div class="caption">
-						Cyber Week
-					</div>
-				</div>
-			</div>
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/visual_20171223_Lifestyle_Christmas_02.jpg">
-					<div class="caption">
-						Holiday Promotion
-					</div>
-				</div>
-			</div>
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/20180415_tech_the_eduCBA_mobile_app_development_lifetime_subscription_bundle.jpg">
-					<div class="caption">
-						eduCBA Course Bundle
-					</div>
-				</div>
-			</div>
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/visual_marketing_email.jpg">
-					<div class="caption">
-						iPhone Promotion
-					</div>
-				</div>
-			</div>
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/20180325_tech_aws_bundle_00.jpg">
-					<div class="caption">
-						Amazon Web Services
-					</div>
-				</div>
-			</div>
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/20180410_lifestyle_omegon_telescope_PREVIEW.jpg">
-					<div class="caption">
-						Telescope
-					</div>
-				</div>
-			</div>
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/20180419_tech_hypergear_wireless_gift_set.jpg">
-					<div class="caption">
-						Wireless Audio
-					</div>
-				</div>
-			</div>
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/20180422_lifestyle_2_category_sale_vpns_&_productivity.jpg">
-					<div class="caption">
-						VPN & Security Deals
-					</div>
-				</div>
-			</div>
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/Civilization-Ad-300x600_frames.gif">
-					<div class="caption">
-						Social Media Ad
-					</div>
-				</div>
-			</div>
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/20180422_tech_category_sale_15percent_off_productivity.jpg">
-					<div class="caption">
-						Productivity Tools
-					</div>
-				</div>
-			</div>
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/20180125_Grammarly-50percentOff_300x600_animated.gif">
-					<div class="caption">
-						Grammarly Social Media Ad
-					</div>
-				</div>
-			</div>
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/20180417_tech_iconscout_plans_PREVIEW.jpg" class="darken2">
-					<div class="caption">
-						Iconscout Package
-					</div>
-				</div>
-			</div>
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/20180410_tech_shuttergrip_smartphone_camera_controller_PREVIEW.jpg">
-					<div class="caption">
-						Shuttergrip
+						<i>Shuttle</i>, colored pencil on paper
 					</div>
 				</div>
 			</div>
 
 
-			
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -326,275 +124,60 @@
 			<!-- -------------------------- -->
 			<div class="masonry-layout__panel">
 				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/visual_Joyus-20180121_joyus_Shop-40-off.jpg">
+					<img src="http://lovelljack.com/images/flute.jpg">
 					<div class="caption">
-						Beauty Sale
+						<i>Flute</i>, (I rendered the shirt and skirt)
 					</div>
 				</div>
 			</div>
 			<div class="masonry-layout__panel">
 				<div class="masonry-layout__panel-content">
-					<!--
-					<img src="http://jl646.com/images/page_images/20180130_Joyus_Valentines-Day-collection-hero.jpg">
-					<div class="gap"></div>
-					-->
-					<img src="http://jl646.com/images/page_images/20180130_Joyus_Valentines-Day-hero.jpg" data-maxwidth>
+					<img src="http://lovelljack.com/images/smith_house.jpg">
 					<div class="caption">
-						Joyus x Citizen Goods Campaign<br>
-						Web Store Banners
+						<i>Smith House</i>, graphite on paper, 56 x 52.6 inches
 					</div>
 				</div>
 			</div>
 			<div class="masonry-layout__panel">
 				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/visual_20171203_lifestyle_7DaysofGifting_Day1.jpg">
-					<div class="gap"></div>
-					<img src="http://jl646.com/images/page_images/visual_20171204_lifestyle_7DaysofGifting_Day2.jpg">
+					<img src="http://jl646.com/images/page_images/fallingwater.jpg">
 					<div class="caption">
-						7 Days Of Gifting Promotion
+						<i>Fallingwater</i>, ballpoint pen on paper, 48.3 x 39.9 inches
 					</div>
 				</div>
 			</div>
 			<div class="masonry-layout__panel">
 				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/20180419_lifestyle_montage_bath_sheets.jpg">
+					<img src="http://lovelljack.com/images/koodo.jpg">
 					<div class="caption">
-						Montage Towels
+						<i>Koodoo</i>, graphite in paper
 					</div>
 				</div>
 			</div>
 			<div class="masonry-layout__panel">
 				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/20180329_joyus_fitness_ellip_blender_preview_crop2.jpg" class="darken1">
+					<img src="http://lovelljack.com/images/tiger.jpg">
 					<div class="caption">
-						Summer Sale
+						<i>Tiger</i>, pencil on paper
 					</div>
 				</div>
 			</div>
 			<div class="masonry-layout__panel">
 				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/20180412_tech_treblab_z2_wireless_noise-cancelling_headphones_00.jpg">
+					<img src="http://lovelljack.com/images/Tyler_1000.jpg">
 					<div class="caption">
-						Headphones
+						<i>Tyler</i>, 2008, charcoal on paper, 8.25 x 18 in.
 					</div>
 				</div>
 			</div>
 			<div class="masonry-layout__panel">
 				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/visual_20171122_lifestyle_black_friday_sitewide.jpg">
-					<!--
-					<div class="gap"></div>
-					<img src="http://jl646.com/images/page_images/20171121_lifestyle_black_friday_vip_early_accces_00.jpg">
-					-->
-					<div class="gap"></div>
-					<img src="http://jl646.com/images/page_images/20171123_lifestyle_black_friday_vip_early_accces_00.jpg">
-					<!--
-					<div class="gap"></div>
-					<img src="http://jl646.com/images/page_images/20171124_lifestyle_black_friday_pricedrops_00.jpg">
-					-->
+					<img src="http://jl646.com/images/page_images/fayum_1800.jpg">
 					<div class="caption">
-						Black Friday
+						<i>Fayum</i>, pencil and digital editing
 					</div>
 				</div>
 			</div>
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/20180219_lifestyle_presidents_day_preview.gif">
-					<!--
-					<div class="gap"></div>
-					<img src="http://jl646.com/images/page_images/20180216_LIfestyle_PresidentsDaySaleLaunches_PREVIEW.jpg">
-					-->
-					<div class="caption">
-						President's Day
-					</div>
-				</div>
-			</div>
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/visual_20171201_Lifestyle_cyber_week.gif">
-					<div class="caption">
-						Cyber Week
-					</div>
-				</div>
-			</div>
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/visual_20171219_Lifestyle_BestOf2017.jpg">
-					<div class="caption">
-						Best Of 2017
-					</div>
-				</div>
-			</div>
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/visual_20171219_Academy_BestOf2017.jpg">
-					<div class="caption">
-						Best Of 2017
-					</div>
-				</div>
-			</div>
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/20180216_mashable_evergreen_display_ad_300x250.jpg">
-					<div class="caption">
-						Mashable Social Media Ad
-					</div>
-				</div>
-			</div>
-			<!--
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/20180130_joyus_Valentines-Day.jpg">
-					<div class="caption">
-						Joyus x Citizen Goods Campaign<br>
-					</div>
-				</div>
-			</div>
-			-->
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/20180211_Joyus_Vday_BeOurValentine-collection-hero.jpg" data-maxwidth>
-					<!--
-					<div class="gap"></div>
-					<img src="http://jl646.com/images/page_images/20180211_Joyus_Vday_BeOurValentine-hero.jpg">
-					<div class="gap"></div>
-					<img src="http://jl646.com/images/page_images/20180211_Joyus_Vday_BeOurValentine_preview.jpg">
-					-->
-					<div class="gap"></div>
-					<img src="http://jl646.com/images/page_images/20180214_Joyus_Vday_GiftsForYourself_preview.jpg" class="darken1">
-					<!--
-					<div class="gap"></div>
-					<img src="http://jl646.com/images/page_images/20180208_Joyus_Vday-Weekend-Escape-20-off_preview_crop.jpg">
-					-->
-					<div class="caption">
-						Valentine's Day Sale<br>
-						Emails and Store Banners
-					</div>
-				</div>
-			</div>
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/20180213_Joyus_Vday_Teleflora_preview.jpg">
-					<div class="caption">
-						Teleflora Promotion
-					</div>
-				</div>
-			</div>
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<!--
-					<img src="http://jl646.com/images/page_images/visual_Joyus-1.21.18-collection-hero.jpg">
-					<div class="gap"></div>
-					-->
-					<img src="http://jl646.com/images/page_images/visual_Joyus-1.21.18-hero.jpg" data-maxwidth>
-					<div class="caption">
-						Beauty Sale<br>
-						Web Store Banner
-					</div>
-				</div>
-			</div>
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/20180320_lifestlye_pricedrop_vibes_earplugs_PREVIEW.jpg">
-					<div class="caption">
-						Earbuds Promotion
-					</div>
-				</div>
-			</div>
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/20180414_academy_project_management.gif">
-					<div class="caption">
-						Project Management Course
-					</div>
-				</div>
-			</div>
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/visual_20171221_Academy_DigitalLastMinuteDeals.gif">
-					<div class="caption">
-						Holiday Promotion
-					</div>
-				</div>
-			</div>
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/visual_20171127_PM_Academy_cyber_monday.jpg">
-					<div class="caption">
-						Cyber Monday
-					</div>
-				</div>
-			</div>
-			<!--
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<div class="gap"></div>
-					<img src="http://jl646.com/images/page_images/20180125_Grammarly-50percentOff_300x250.jpg">
-					<div class="gap"></div>
-					<img src="http://jl646.com/images/page_images/20180216_citizen_goods_evergreen_display_ad_336x280.gif">
-					<div class="gap"></div>
-					<img src="http://jl646.com/images/page_images/20180216_cnn_evergreen_display_ad_300x600.jpg">
-					<div class="gap"></div>
-					<img src="http://jl646.com/images/page_images/20180216_joyus_evergreen_display_ad_336x280.jpg">
-					<div class="gap"></div>
-					<img src="http://jl646.com/images/page_images/20180216_stacksocial_vpn_unlimited_display_ad_300x600.gif">
-					<div class="caption">
-						Social Media Ads
-					</div>
-				</div>
-			</div>
-			-->
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/20180204_Joyus_Valentines-Day-Hint_preview.jpg" class="darken1">
-					<div class="caption">
-						Valentine's Day Sale
-					</div>
-				</div>
-			</div>
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/20180304_joyus_beautyfail_preview.jpg" class="darken2">
-					<div class="caption">
-						Beauty Fail
-					</div>
-				</div>
-			</div>
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/20180501_tech_pay_what_you_want_the_2018_machine_learning_bundle_PREVIEW.jpg">
-					<div class="caption">
-						Machine Learning Bundle
-					</div>
-				</div>
-			</div>
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/20180501_lifestyle_GDPR.jpg">
-					<div class="caption">
-						GDPR Compliance Course
-					</div>
-				</div>
-			</div>
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/20180506_tech_become_a_speed_reading_machine.jpg">
-					<div class="caption">
-						Speed Reading Course
-					</div>
-				</div>
-			</div>
-
-
-
-
-
-			
-
-			
-			
-
-
 
 
 
@@ -612,87 +195,61 @@
 			<!-- -------------------------- -->
 			<div class="masonry-layout__panel">
 				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/20180125_joyus_Tria.jpg" class="darken1">
+					<img src="http://lovelljack.com/images/subway_1000.jpg">
 					<div class="caption">
-						Tria
+						<i>Subway, charcoal on paper</i>
 					</div>
 				</div>
 			</div>
 			<div class="masonry-layout__panel">
 				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/20180216_joyus_evergreen_display_ad_300x600.jpg", class="darken1">
+					<img src="http://lovelljack.com/images/handshake_1000.jpg">
 					<div class="caption">
-						Joyus Social Media Ad
+						<i>Handshake</i>, graphite on paper
 					</div>
 				</div>
 			</div>
 			<div class="masonry-layout__panel">
 				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/20180424_joyus_montage_towels_PREVIEW.jpg">
+					<img src="http://lovelljack.com/images/arrays.jpg">
 					<div class="caption">
-						Montage Towels
+						<i>Arrays</i>, colored pencil on paper
 					</div>
 				</div>
 			</div>
 			<div class="masonry-layout__panel">
 				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/20180206_Joyus_Valentines-Day-Vday-Glam_preview.jpg" class="darken1">
+					<img src="http://lovelljack.com/images/Parabola_1000.jpg">
 					<div class="caption">
-						Valentine's Day
+						<i>Parabola</i>, charcoal on paper
 					</div>
 				</div>
 			</div>
 			<div class="masonry-layout__panel">
 				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/20180227_joyus_pamper_yourself_preview.jpg">
+					<img src="http://lovelljack.com/images/skull_900.jpg">
 					<div class="caption">
-						Pamper Yourself Campaign
+						<i>Skull</i>, marker and pencil on paper
 					</div>
 				</div>
 			</div>
 			<div class="masonry-layout__panel">
 				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/20180417_lifestyle_arvo_watch.jpg">
+					<img src="http://lovelljack.com/images/Harp.jpg">
 					<div class="caption">
-						Arvo Watch
+						<i>Harp</i>, 2008, charcoal on paper, 8.25 x 18 in.
 					</div>
 				</div>
 			</div>
 			<div class="masonry-layout__panel">
 				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/20180501_joyus_mothers_day_gifts_PREVIEW_crop.jpg">
+					<img src="http://lovelljack.com/images/hands.jpg">
 					<div class="caption">
-						Mother's Day
+						<i>Hands</i>, colored pencil on paper
 					</div>
 				</div>
 			</div>
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<!-- <img src="http://jl646.com/images/page_images/20180201_joyus_Valentines-Day_material_cropped.jpg"> -->
-					<img src="http://jl646.com/images/page_images/20180201_joyus_Valentines-Day.jpg" class="darken1">
-					<div class="caption">
-						Valentine's Day Sale
-					</div>
-				</div>
-			</div>
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/20180429_joyus_15percent_off_anti_aging_and_beauty_PREVIEW.jpg" class="darken2">
-					<div class="caption">
-						Best Sellers
-					</div>
-				</div>
-			</div>
-			<!--
-			<div class="masonry-layout__panel">
-				<div class="masonry-layout__panel-content">
-					<img src="http://jl646.com/images/page_images/20180311_lifestlye_pricedrop_gosafe_preview.jpg">
-					<div class="caption">
-						GoSafe Camera
-					</div>
-				</div>
-			</div>
-			-->
+
 
 
 
