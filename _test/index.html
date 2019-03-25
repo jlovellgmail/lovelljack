@@ -1,72 +1,113 @@
-<!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns#">
+<html>
 <head>
-	<title>Jack Lovell</title>
-	<meta name="description" content="Jack Lovell art">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<meta charset="utf-8">
 	<link rel="stylesheet" href="style.css">
+	<script src="jquery-2.1.0.min.js"></script>
+	<!-- <script src="script.js"></script> -->
+	<script>
+		data = [
+			{
+				url: "images/subway_1000.jpg"
+				,name: "Subway"
+				,title: "Subway"
+				,body: "charcoal on paper, 2016"
+			}
+			,{
+				url: "images/torso_900.jpg"
+				,name: "Torso"
+				,title: "Torso"
+				,body: "graphite on paper"
+			}
+			,{
+				url: "images/airplane.jpg"
+				,name: "Airplane"
+				,title: "Airplane"
+				,body: "graphite on paper"
+			}
+			,{
+				url: "images/Bent_Shape_1000.jpg"
+				,name: "Bent Shape"
+				,title: "Bent Shape"
+				,body: "charcoal on paper"
+			}
+			,{
+				url: "images/Flowers_1500.jpg"
+				,name: "Flowers"
+				,title: "Flowers"
+				,body: "colored pencil on paper"
+			}
+			,{
+				url: "images/johnny_pappas.jpg"
+				,name: "Johnny Pappas"
+				,title: "Johnny Pappas"
+				,body: "charcoal on paper"
+			}
+			,{
+				url: "images/Parabola_1000.jpg"
+				,name: "Heads"
+				,title: "Heads"
+				,body: "charcoal on paper"
+			}
+			,{
+				url: "images/nara.jpg"
+				,name: "Nara"
+				,title: "Nara"
+				,body: "graphite on paper"
+			}
+		];
+		$(document).ready(function(){
+			$("img").click(function(){
+				console.log($(this).attr("data-name"));
+				blowup($(this).attr("data-name"));
+
+			});
+			$(".blowup").click(function(){
+				$(".blowup").css("display", "none");
+			});
+		});
+		function blowup(name){
+			// console.log("blowup");
+
+			indexes = $.map(data, function(obj, index) {
+				// console.log("obj.url:" + obj.url);
+			    if(obj.name === name) {
+			        return index;
+			    }
+			})
+			item = data[indexes[0]];
+			// console.log("item: " + item);
+
+			$(".blowup img").attr("src", item.url);
+			$(".blowup figcaption .title").text(item.title);
+			$(".blowup figcaption .body").text(item.body);
+			$(".blowup").css("display", "flex");
+		}
+
+
+	</script>
 </head>
 <body>
+	<div class="name">Jack Lovell</div>
+	<div id="photos">
 
+		<img src="images/subway_1000.jpg" data-name="Subway">
+		<img src="images/torso_900.jpg" data-name="Torso">
+		<img src="images/airplane.jpg" data-name="Airplane">
+		<img src="images/Bent_Shape_1000.jpg" data-name="Bent Shape">
+		<img src="images/Flowers_1500.jpg" data-name="Flowers">
+		<img src="images/johnny_pappas.jpg" data-name="Johnny Pappas">
+		<img src="images/Parabola_1000.jpg" data-name="Heads">
+		<img src="images/nara.jpg" data-name="Nara">
 
-	<div class="header">
-		<div class="name">
-			<a href="http://lovelljack.com/">Jack Lovell</a>
-			<!--
-			<span class="divider">/</span>
-			<a href="exhibitions.html">Exhibitions</a>
-			-->
-		</div>
 	</div>
-
-
-
-	<div class="container">
-		<div class="content">
-			<div class="content_gap">&nbsp;</div>
-			<!-- --------------------------------- -->
-			<div class="image_box" style="width:443px; ">
-				<a href="airplane.html">
-					<img src="images/airplane.jpg" alt="" border="0" />
-				</a>
-				<div class="caption">
-				</div>
-				<div class="image_gap">&nbsp;</div>
-			</div>
-			<!-- --------------------------------- -->
-			<div class="image_box" style="width:443px; ">
-				<a href="flowers.html">
-					<img src="images/Flowers_443.jpg" alt="" border="0" />
-				</a>
-				<div class="caption">
-				</div>
-				<div class="image_gap">&nbsp;</div>
-			</div>
-			<!-- --------------------------------- -->
-			<div class="image_box" style="width:443px; ">
-				<a href="bent_shape.html">
-					<img src="images/Bent_Shape_443.jpg" alt="" border="0" />
-				</a>
-				<div class="caption">
-				</div>
-				<div class="image_gap">&nbsp;</div>
-			</div>
-			<!-- --------------------------------- -->
-			<div class="image_box" style="width:443px; ">
-				<a href="torso.html">
-					<img src="images/torso_443.jpg" alt="" border="0" />
-				</a>
-				<div class="caption">
-				</div>
-				<div class="image_gap">&nbsp;</div>
-			</div>
-			<!-- --------------------------------- -->
-			<div class="content_gap">&nbsp;</div>
-		</div>
+	<div class="blowup">
+		<figure>
+			<img src="">
+			<figcaption>
+				<span class="title"></span>,&nbsp
+				<span class="body"></span>
+			</figcaption>
+		</figure>
+		
 	</div>
-
-
-
 </body>
 </html>
