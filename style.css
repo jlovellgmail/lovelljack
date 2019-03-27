@@ -61,7 +61,7 @@ figcaption .title {
 
 .name {
 	margin-bottom: 24px;
-	letter-spacing: 1px;
+	letter-spacing: .5px;
 	font-family: serif;
 }
 #photos {
