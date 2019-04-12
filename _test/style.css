@@ -35,7 +35,7 @@
 }
 figure {
     text-align: center;
-    padding-bottom: 20px;
+    padding-bottom: 40px;
 }
 figcaption {
     width: 100%;
@@ -43,12 +43,12 @@ figcaption {
     margin: 0 auto;
 	color: rgba(0,0,0, .6);
     font-size: 14px;
-    margin-top: 8px;
+    margin-top: 13px;
 }
 .blowup img {
     max-width: 80vw;
     max-height: 80vh;
-    max-height: calc(100vh - 130px);
+    max-height: calc(100vh - 150px);
     padding-top: 50px;
 }
 figcaption .title {
@@ -60,24 +60,16 @@ figcaption .title {
 
 
 .name {
-	margin-bottom: 24px;
+	margin-bottom: 36px;
 	letter-spacing: .5px;
 	font-family: serif;
+	text-align: left;
 }
 #photos {
-   /* Prevent vertical gaps */
    line-height: 0;
-   
-   /*
-   -webkit-column-count: 4;
-   -webkit-column-gap:   42px;
-   -moz-column-count:    4;
-   -moz-column-gap:      42px;
-   */
-   column-count:         3;
-   column-gap:           42px;
-
-   max-width: 1500px;
+   column-count: 3;
+   column-gap: 42px;
+   max-width: 1200px;
    margin: 0 auto;
 }
 
@@ -122,6 +114,6 @@ figcaption .title {
 body {
   margin: 0;
   padding: 42px;
-  padding-top: 24px;
+  padding-top: 34px;
   text-align: center;
 }
