@@ -117,6 +117,11 @@
 				,url: "http://lovelljack.com/images/handshake_1000.jpg"
 			}
 		];
+		// add order index to each element for adding break divs after reorder
+		display_original.forEach(function(e,i){
+			// starting with 1 not 0
+			e.order = i+1;
+		});
 
 
 
@@ -165,12 +170,19 @@
 			// populate images
 			function populateimages(arr){
 				arr.forEach(function(e){
+					// force column breaks
+					if(e.order <= col_count){
+						var div = $(document.createElement("div"))
+						.addClass("break");
+						$("#images").append(div);
+					}
+					// add image
 					var img = $(document.createElement("img"))
 					.attr("src", e.url)
 					.attr("data-name", e.name);
 					$("#images").append(img);
-					addclickhandlers();
 				});
+				addclickhandlers();
 			}
 
 

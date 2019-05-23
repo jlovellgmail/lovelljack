@@ -35,7 +35,7 @@ figcaption .title {
 	margin-bottom: 36px;
 	letter-spacing: .5px;
 	font-family: serif;
-	text-align: left;
+	text-align: center;
 }
 #images {
    line-height: 0;
@@ -49,7 +49,9 @@ figcaption .title {
   height: auto;
   margin-bottom: 42px;
 }
-
+.break {
+    break-after: column;
+}
 @media (max-width: 800px) {
 	#images {
 	  -moz-column-count:    2;
