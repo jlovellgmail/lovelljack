@@ -70,28 +70,148 @@
 				,body: "2019, Inkjet transfer, colored pencil, highlighter and pastel on paper, 28.5 x 21.4 inches"
 			}
 		];
+
+
+
+		display_original = [
+			{
+				name: "Kiss"
+				,title: "Kiss"
+				,body: "2019, Inkjet transfer, colored pencil, highlighter and pastel on paper, 28.5 x 21.4 inches"
+				,url: "http://lovelljack.com/images/_MG_7841-1_1500_90q.jpg"
+			}
+			,{
+				name: "Flowers"
+				,title: "Flowers"
+				,body: "2017, colored pencil on paper, 21.1 x 19.4 inches"
+				,url: "http://lovelljack.com/images/Flowers_1500.jpg"
+			}
+			,{
+				name: "Torso"
+				,title: "Torso"
+				,body: "2016, ink and graphite on paper, 22 x 21 inches"
+				,url: "http://lovelljack.com/images/torso_900.jpg"
+			}
+			,{
+				name: "Subway"
+				,title: "Subway"
+				,body: "2016, charcoal on paper, 18.4 x 23 inches"
+				,url: "http://lovelljack.com/images/subway_1000.jpg"
+			}
+			,{
+				name: "Bent Shape"
+				,title: "Bent Shape"
+				,body: "2008, charcoal on paper, 28.3 x 22.1 inches"
+				,url: "http://lovelljack.com/images/Bent_Shape_1000.jpg"
+			}
+			,{
+				name: "Heads"
+				,title: "Heads"
+				,body: "2008, charcoal on paper, 24.8 x 40 inches"
+				,url: "http://lovelljack.com/images/Parabola_1000.jpg"
+			}
+		];
+
+
+
+		var col_count;
+		var col_count_old;
+		var display;
+
+
+
 		$(document).ready(function(){
-			$("#photos img").click(function(){
-				// console.log($(this).attr("data-name"));
-				blowup($(this).attr("data-name"));
 
+
+
+
+
+
+
+			// reorder for initial col count
+			function setinitialview(){
+				col_count = Number($("#images").css("column-count"));
+				display = reorder(display_original, col_count);
+				col_count_old = col_count;
+				populateimages(display);
+			}
+			setinitialview();
+
+
+
+			// reorder when column count changes
+			// adapted from: http://thenewcode.com/948/Triggering-JavaScript-Actions-With-CSS-Media-Queries
+			function checkForViewportChange(){
+				col_count = Number($("#images").css("column-count"));
+				if (col_count != col_count_old){
+					display = reorder(display_original, col_count);
+					col_count_old = col_count;
+					$("#images").empty();
+					populateimages(display);
+				}
+			}
+			$(window).resize(function(){
+			  checkForViewportChange();
 			});
-			$(".blowup").click(function(){
-				$(".blowup").css("display", "none");
-			});
+
+
+
+			// populate images
+			function populateimages(arr){
+				arr.forEach(function(e){
+					var img = $(document.createElement("img"))
+					.attr("src", e.url)
+					.attr("data-name", e.name);
+					$("#images").append(img);
+					addclickhandlers();
+				});
+			}
+
+
+
+
+			// reorder for left-to-right
+			// adapted from: https://hackernoon.com/masonry-layout-technique-react-demo-of-100-css-control-of-the-view-e4190fa4296
+			function reorder(arr, columns){
+				var cols = columns;
+				var out = [];
+				var col = 0;
+				while(col < cols){
+					for(i=0;i<arr.length;i+=cols){
+						var val = arr[i+col];
+						if(val !== undefined)
+							out.push(val);
+					}
+					col++;
+				}
+				return out;
+			}
+
+
+
+			// click handlers
+			function addclickhandlers(){
+				$("#images img").click(function(){
+					blowup($(this).attr("data-name"), display);
+				});
+				$(".blowup").click(function(){
+					$(".blowup").css("display", "none");
+				});				
+			}
+
+
+
+
 		});
-		function blowup(name){
-			// console.log("blowup");
 
-			indexes = $.map(data, function(obj, index) {
-				// console.log("obj.url:" + obj.url);
+
+		function blowup(name, arr){
+			indexes = $.map(arr, function(obj, index) {
 			    if(obj.name === name) {
 			        return index;
 			    }
 			})
-			item = data[indexes[0]];
-			// console.log("item: " + item);
-
+			item = arr[indexes[0]];
 			$(".blowup img").attr("src", item.url);
 			$(".blowup figcaption .title").text(item.title);
 			$(".blowup figcaption .body").text(item.body);
@@ -102,21 +222,15 @@
 	</script>
 </head>
 <body>
+
+
 	<div class="name">Jack Lovell</div>
-	<div id="photos">
 
-		<img src="http://lovelljack.com/images/_MG_7841-1_1500_90q.jpg" data-name="Kiss">
-		<img src="http://lovelljack.com/images/subway_1000.jpg" data-name="Subway">
-		<img src="http://lovelljack.com/images/torso_900.jpg" data-name="Torso">
-		<!-- <img src="http://lovelljack.com/images/airplane.jpg" data-name="Airplane"> -->
-		<!-- <img src="http://lovelljack.com/images/_MG_7770-1.jpg" data-name="Disney"> -->
-		<img src="http://lovelljack.com/images/Bent_Shape_1000.jpg" data-name="Bent Shape">
-		<img src="http://lovelljack.com/images/Flowers_1500.jpg" data-name="Flowers">
-		<!-- <img src="http://lovelljack.com/images/johnny_pappas.jpg" data-name="Johnny Pappas"> -->
-		<img src="http://lovelljack.com/images/Parabola_1000.jpg" data-name="Heads">
-		<!-- <img src="http://lovelljack.com/images/nara.jpg" data-name="Nara"> -->
 
+	<div id="images">
 	</div>
+
+
 	<div class="blowup">
 		<figure>
 			<img src="">
@@ -125,7 +239,8 @@
 				<span class="body"></span>
 			</figcaption>
 		</figure>
-		
 	</div>
+
+
 </body>
 </html>
