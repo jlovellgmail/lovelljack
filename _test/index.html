@@ -8,68 +8,6 @@
 	<script src="jquery-2.1.0.min.js"></script>
 	<!-- <script src="script.js"></script> -->
 	<script>
-		data = [
-			{
-				url: "http://lovelljack.com/images/subway_1000.jpg"
-				,name: "Subway"
-				,title: "Subway"
-				,body: "2016, charcoal on paper, 18.4 x 23 inches"
-			}
-			,{
-				url: "http://lovelljack.com/images/torso_900.jpg"
-				,name: "Torso"
-				,title: "Torso"
-				,body: "2016, ink and graphite on paper, 22 x 21 inches"
-			}
-			,{
-				url: "http://lovelljack.com/images/airplane.jpg"
-				,name: "Airplane"
-				,title: "Airplane"
-				,body: "graphite on paper"
-			}
-			,{
-				url: "http://lovelljack.com/images/Bent_Shape_1000.jpg"
-				,name: "Bent Shape"
-				,title: "Bent Shape"
-				,body: "2008, charcoal on paper, 28.3 x 22.1 inches"
-			}
-			,{
-				url: "http://lovelljack.com/images/Flowers_1500.jpg"
-				,name: "Flowers"
-				,title: "Flowers"
-				,body: "2017, colored pencil on paper, 21.1 x 19.4 inches"
-			}
-			,{
-				url: "http://lovelljack.com/images/johnny_pappas.jpg"
-				,name: "Johnny Pappas"
-				,title: "Johnny Pappas"
-				,body: "charcoal on paper"
-			}
-			,{
-				url: "http://lovelljack.com/images/Parabola_1000.jpg"
-				,name: "Heads"
-				,title: "Heads"
-				,body: "2008, charcoal on paper, 24.8 x 40 inches"
-			}
-			,{
-				url: "http://lovelljack.com/images/nara.jpg"
-				,name: "Nara"
-				,title: "Nara"
-				,body: "2008, graphite on paper"
-			}
-			,{
-				url: "http://lovelljack.com/images/_MG_7770-1.jpg"
-				,name: "Disney"
-				,title: "Disney"
-				,body: "2019, graphite on paper, 20.3 x 15.6 inches"
-			}
-			,{
-				url: "http://lovelljack.com/images/_MG_7841-1_1500_90q.jpg"
-				,name: "Kiss"
-				,title: "Kiss"
-				,body: "2019, Inkjet transfer, colored pencil, highlighter and pastel on paper, 28.5 x 21.4 inches"
-			}
-		];
 
 
 
@@ -113,7 +51,7 @@
 			,{
 				name: "Stock Photo"
 				,title: "Stock Photo"
-				,body: "20016, graphite on paper, 30 x 23 inches"
+				,body: "20016, graphite on paper, 23 x 30 inches"
 				,url: "http://lovelljack.com/images/handshake_1000.jpg"
 			}
 		];
@@ -212,10 +150,48 @@
 				$("#images img").click(function(){
 					blowup($(this).attr("data-name"), display);
 				});
+				
+				/*
 				$(".blowup").click(function(){
 					$(".blowup").css("display", "none");
-				});				
+				});
+				*/
+				
 			}
+
+
+			function nextindex(){
+				return (indexes[0]+1) % display.length;
+			}
+			function previndex(){
+				return (indexes[0]-1 + display.length) % display.length;
+			}
+			$(".arrow.left").click(function(){
+				blowup(display[previndex()].name, display);
+			});
+			$(".arrow.right").click(function(){
+				blowup(display[nextindex()].name, display);
+			});
+			$(".xbutton").click(function(){
+				$(".blowup").css("display", "none");
+			});
+			document.onkeydown = function(e) {
+		        e = e || window.event;
+		        if (e.keyCode == '37') {
+		        	//left arrow
+		            blowup(display[previndex()].name, display);
+		        }
+		        else if (e.keyCode == '39') {
+		            // righta arrow
+		            blowup(display[nextindex()].name, display);
+		        }
+		        else if (e.keyCode === 27) {
+		        	// esc
+		        	$(".blowup").css("display", "none");
+		        }
+		    }
+
+
 
 
 
@@ -257,6 +233,13 @@
 				<span class="body"></span>
 			</figcaption>
 		</figure>
+		<div class="closebutton">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="xbutton"><path d="M1.5 22.5l21-21m-21 0l21 21" vector-effect="non-scaling-stroke"></path></svg>
+		</div>
+		<div class="blowupcontrols noselect">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="arrow left"><path d="M0 10h17.5" vector-effect="non-scaling-stroke"></path><path d="M9.5 2l8 8-8 8" fill="none" vector-effect="non-scaling-stroke"></path></svg>
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="arrow right"><path d="M0 10h17.5" vector-effect="non-scaling-stroke"></path><path d="M9.5 2l8 8-8 8" fill="none" vector-effect="non-scaling-stroke"></path></svg>
+		</div>
 	</div>
 
 
