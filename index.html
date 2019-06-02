@@ -106,7 +106,8 @@
 				
 				arr.forEach(function(e){
 					// force column breaks
-					if(e.order <= col_count){
+					if(e.order <= col_count && e.order > 1){
+						console.log("e.order: " + e.order);
 						var div = $(document.createElement("div"))
 						.addClass("break");
 						$("#images").append(div);
