@@ -69,22 +69,13 @@
 
 
 
+
+
+
+
+
 		$(document).ready(function(){
 
-
-
-
-
-
-
-			// reorder for initial col count
-			function setinitialview(){
-				col_count = Number($("#images").css("column-count"));
-				display = reorder(display_original, col_count);
-				col_count_old = col_count;
-				populateimages(display);
-			}
-			setinitialview();
 
 
 
@@ -93,9 +84,12 @@
 			function checkForViewportChange(){
 				col_count = Number($("#images").css("column-count"));
 				if (col_count != col_count_old){
-					display = reorder(display_original, col_count);
+					var cols = reorder_shortest(display_original, col_count);
+					display = [];
+					cols.forEach(function(col){
+						display = display.concat(col);
+					});
 					col_count_old = col_count;
-					$("#images").empty();
 					populateimages(display);
 				}
 			}
@@ -107,6 +101,9 @@
 
 			// populate images
 			function populateimages(arr){
+
+				$("#images").empty();
+				
 				arr.forEach(function(e){
 					// force column breaks
 					if(e.order <= col_count){
@@ -126,6 +123,7 @@
 
 
 
+
 			// reorder for left-to-right
 			// adapted from: https://hackernoon.com/masonry-layout-technique-react-demo-of-100-css-control-of-the-view-e4190fa4296
 			function reorder(arr, columns){
@@ -141,6 +139,75 @@
 					col++;
 				}
 				return out;
+			}
+
+
+
+
+
+
+
+			// get image heights without waiting for images to finish loading
+			order_and_display();
+			function order_and_display(){
+				// console.log("order_and_display()..");
+				display_original.forEach(function(e){
+					add_aspect(e);
+				});				
+			}
+			var aspectcounter = 0;
+			function add_aspect(e){
+				var img = document.createElement('img');
+				img.src = e.url;
+				var poll = setInterval(function () {
+				    if (img.naturalHeight) {
+				        clearInterval(poll);
+				        var aspect = img.naturalHeight / img.naturalWidth;
+				        console.log("aspect: " + aspect);
+				        e.aspect = aspect;
+				        aspectcounter++;
+				        if(aspectcounter == display_original.length){
+				        	// console.log("aspectcounter: " + aspectcounter);
+				        	col_count = Number($("#images").css("column-count"));
+				        	var cols = reorder_shortest(display_original, col_count);
+				        	display = [];
+				        	cols.forEach(function(col){
+				        		display = display.concat(col);
+				        	});
+				        	col_count_old = col_count;
+				        	populateimages(display);
+				        }
+				    }
+				}, 10);
+			}
+			// reorder with images placed in shortest col
+			// g = reorder_shortest(display_original, 3);
+			function min( array ){
+			    return Math.min.apply( Math, array );
+			};
+			function getshortest(arr){
+				return arr.indexOf(min(arr));
+			}
+			function reorder_shortest(arr, columns){
+				cols = [];
+				heights = [];
+				// add top image in each col
+				for(i=0;i<columns;i++){
+					// create new array and add image to it
+					cols.push([]);
+					cols[i].push(arr[i]);
+					// add height of col
+					heights.push(arr[i].aspect);
+				}
+				// add images below top strip
+				for(i=columns;i<arr.length;i++){
+					var shortest = getshortest(heights);
+					var col = cols[shortest];
+					col.push(arr[i]);
+					// add height
+					heights[shortest] += arr[i].aspect;
+				}
+				return cols;
 			}
 
 
