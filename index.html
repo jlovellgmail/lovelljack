@@ -12,7 +12,17 @@
 
 
 		display_original = [
+			
+
+
+
 			{
+				name: "Photo"
+				,title: "Photo"
+				,body: "2019, Oil on paper, 10.6 x 8.5 inches"
+				,url: "http://lovelljack.com/images/20190708_021503489_iOS.jpg"
+			}
+			,{
 				name: "Doing Nothing"
 				,title: "Doing Nothing"
 				,body: "2019, Inkjet transfer, colored pencil, highlighter and pastel on paper, 28.5 x 21.4 inches"
@@ -51,7 +61,7 @@
 			,{
 				name: "Stock Photo"
 				,title: "Stock Photo"
-				,body: "20016, graphite on paper, 23 x 30 inches"
+				,body: "2016, graphite on paper, 23 x 30 inches"
 				,url: "http://lovelljack.com/images/handshake_1000.jpg"
 			}
 		];
@@ -229,16 +239,16 @@
 
 
 			function nextindex(){
-				return (indexes[0]+1) % display.length;
+				return (indexes[0]+1) % display_original.length;
 			}
 			function previndex(){
-				return (indexes[0]-1 + display.length) % display.length;
+				return (indexes[0]-1 + display_original.length) % display_original.length;
 			}
 			$(".arrow.left").click(function(){
-				blowup(display[previndex()].name, display);
+				blowup(display_original[previndex()].name, display_original);
 			});
 			$(".arrow.right").click(function(){
-				blowup(display[nextindex()].name, display);
+				blowup(display_original[nextindex()].name, display_original);
 			});
 			$(".xbutton").click(function(){
 				$(".blowup").css("display", "none");
@@ -247,11 +257,11 @@
 		        e = e || window.event;
 		        if (e.keyCode == '37') {
 		        	//left arrow
-		            blowup(display[previndex()].name, display);
+		            blowup(display_original[previndex()].name, display_original);
 		        }
 		        else if (e.keyCode == '39') {
-		            // righta arrow
-		            blowup(display[nextindex()].name, display);
+		            // right arrow
+		            blowup(display_original[nextindex()].name, display_original);
 		        }
 		        else if (e.keyCode === 27) {
 		        	// esc
