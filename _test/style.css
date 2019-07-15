@@ -12,8 +12,9 @@
 }
 .blowupcontrols {
 	position: absolute;
-	bottom: 20px;
-	right: 20px;
+	bottom: 51%;
+	/*right: 5px;*/
+	width: 100%;
 }
 .arrow, .xbutton {
 	stroke: #000;
@@ -21,10 +22,24 @@
 	width: 20px;
 	stroke-width: 2;
 	cursor: pointer;
+	opacity: .5;
+}
+.arrow {
+	position: absolute;
+}
+.arrow.right {
+	right: 20px;
+	padding: 5px;
+	padding-top: 8px;
+	padding-bottom: 8px;
 }
 .arrow.left {
 	transform: rotate(180deg);
-	margin-right: 15px;
+	/*margin-right: 15px;*/
+	left: 20px;
+	padding: 5px;
+	padding-top: 8px;
+	padding-bottom: 8px;
 }
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
@@ -39,8 +54,11 @@
 	height: 18px;
 	width: 18px;
 	position: absolute;
-	right: 20px;
-	top: 20px;
+    right: 15px;
+    top: 17px;
+    padding: 5px;
+	padding-top: 8px;
+	transform: scale(.8);
 }
 figure {
     text-align: center;
@@ -57,7 +75,7 @@ figcaption {
 .blowup img {
     max-width: 80vw;
     max-height: calc(100vh - 170px);
-    padding-top: 50px;
+    padding-top: 30px;
 }
 figcaption .title {
 	font-style: italic;
@@ -97,12 +115,18 @@ figcaption .title {
 		column-count:         1;
 	}
 	.blowupcontrols {
-		bottom: 15px;
-		right: 15px;
+		/*bottom: 35px;*/
+		/*right: 15px;*/
 	}
 	.arrow {
 		height: 15px;
 		stroke-width: 1.4px;
+	}
+	.arrow.left {
+		left: 0;
+	}
+	.arrow.right {
+		right: 0;
 	}
 	.xbutton {
 		stroke-width: 1.4px;
@@ -110,6 +134,11 @@ figcaption .title {
 		right: 15px;
 		width: 14px;
 		height: 15px;
+
+
+		top: 0;
+		right: 0;
+
 	}
 	figcaption {
 		font-size: 13px;
