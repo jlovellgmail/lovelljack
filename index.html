@@ -251,7 +251,7 @@
 				blowup(display_original[nextindex()].name, display_original);
 			});
 			$(".xbutton").click(function(){
-				$(".blowup").css("display", "none");
+				closeblowup();
 			});
 			document.onkeydown = function(e) {
 		        e = e || window.event;
@@ -265,7 +265,7 @@
 		        }
 		        else if (e.keyCode === 27) {
 		        	// esc
-		        	$(".blowup").css("display", "none");
+		        	closeblowup();
 		        }
 		    }
 
@@ -278,6 +278,7 @@
 
 
 		function blowup(name, arr){
+			$("body").addClass("noscroll");
 			indexes = $.map(arr, function(obj, index) {
 			    if(obj.name === name) {
 			        return index;
@@ -288,6 +289,10 @@
 			$(".blowup figcaption .title").text(item.title);
 			$(".blowup figcaption .body").text(item.body);
 			$(".blowup").css("display", "flex");
+		}
+		function closeblowup(){
+			$("body").removeClass("noscroll");
+			$(".blowup").css("display", "none");
 		}
 
 

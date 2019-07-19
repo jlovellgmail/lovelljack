@@ -1,4 +1,6 @@
-
+body.noscroll {
+	overflow: hidden;
+}
 .blowup {
     display: none;
     align-items: center; /* align vertical */
