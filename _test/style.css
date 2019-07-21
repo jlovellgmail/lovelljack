@@ -102,6 +102,7 @@ figcaption .title {
   width: 100%;
   height: auto;
   margin-bottom: 42px;
+  cursor: pointer;
 }
 .break {
     break-after: column;
