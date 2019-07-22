@@ -17,6 +17,12 @@
 
 
 			{
+				name: "Novelas"
+				,title: "Novelas"
+				,body: "2019, Charcoal on paper, 16.7 x 13.5 inches"
+				,url: "http://lovelljack.com/images/Novelas.jpg"
+			}
+			,{
 				name: "Photo 1939"
 				,title: "Photo 1939"
 				,body: "2019, Oil on paper, 10.6 x 8.5 inches"
@@ -226,7 +232,7 @@
 			// click handlers
 			function addclickhandlers(){
 				$("#images img").click(function(){
-					blowup($(this).attr("data-name"), display);
+					blowup($(this).attr("data-name"), display_original);
 				});
 				
 				/*
@@ -238,11 +244,11 @@
 			}
 
 
-			function nextindex(){
-				return (indexes[0]+1) % display_original.length;
-			}
 			function previndex(){
 				return (indexes[0]-1 + display_original.length) % display_original.length;
+			}
+			function nextindex(){
+				return (indexes[0]+1) % display_original.length;
 			}
 			$(".arrow.left").click(function(){
 				blowup(display_original[previndex()].name, display_original);
