@@ -17,52 +17,58 @@
 
 
 			{
+				name: "Novelas"
+				,title: "Novelas"
+				,body: "2019, Charcoal on paper, 16.7 x 13.5 inches"
+				,url: "http://lovelljack.com/images/Jack_Lovell_Novelas.jpg"
+			}
+			,{
 				name: "Photo 1939"
 				,title: "Photo 1939"
 				,body: "2019, Oil on paper, 10.6 x 8.5 inches"
-				,url: "http://lovelljack.com/images/_MG_7847-1.jpg"
+				,url: "http://lovelljack.com/images/Jack_Lovell_Photo_1939.jpg"
 			}
 			,{
 				name: "Doing Nothing"
 				,title: "Doing Nothing"
 				,body: "2019, Inkjet transfer, colored pencil, highlighter and pastel on paper, 28.5 x 21.4 inches"
-				,url: "http://lovelljack.com/images/_MG_7841-1_1500_90q.jpg"
+				,url: "http://lovelljack.com/images/Jack_Lovell_Doing_Nothing.jpg"
 			}
 			,{
 				name: "Flowers"
 				,title: "Flowers"
 				,body: "2017, colored pencil on paper, 21.1 x 19.4 inches"
-				,url: "http://lovelljack.com/images/Flowers_1500.jpg"
+				,url: "http://lovelljack.com/images/Jack_Lovell_Flowers.jpg"
 			}
 			,{
 				name: "Torso"
 				,title: "Torso"
 				,body: "2016, ink and graphite on paper, 22 x 21 inches"
-				,url: "http://lovelljack.com/images/torso_900.jpg"
+				,url: "http://lovelljack.com/images/Jack_Lovell_Torso.jpg"
 			}
 			,{
 				name: "Subway"
 				,title: "Subway"
 				,body: "2016, charcoal on paper, 18.4 x 23 inches"
-				,url: "http://lovelljack.com/images/subway_1000.jpg"
+				,url: "http://lovelljack.com/images/Jack_Lovell_Subway.jpg"
 			}
 			,{
 				name: "Bent Shape"
 				,title: "Bent Shape"
 				,body: "2008, charcoal on paper, 28.3 x 22.1 inches"
-				,url: "http://lovelljack.com/images/Bent_Shape_1000.jpg"
+				,url: "http://lovelljack.com/images/Jack_Lovell_Bent_Shape.jpg"
 			}
 			,{
 				name: "Parabola"
 				,title: "Parabola"
 				,body: "2008, charcoal on paper, 24.8 x 40 inches"
-				,url: "http://lovelljack.com/images/Parabola_1000.jpg"
+				,url: "http://lovelljack.com/images/Jack_Lovell_Parabola.jpg"
 			}
 			,{
 				name: "Stock Photo"
 				,title: "Stock Photo"
 				,body: "2016, graphite on paper, 23 x 30 inches"
-				,url: "http://lovelljack.com/images/handshake_1000.jpg"
+				,url: "http://lovelljack.com/images/Jack_Lovell_Stock_Photo.jpg"
 			}
 		];
 		// add order index to each element for adding break divs after reorder
@@ -238,11 +244,11 @@
 			}
 
 
-			function nextindex(){
-				return (indexes[0]+1) % display_original.length;
-			}
 			function previndex(){
 				return (indexes[0]-1 + display_original.length) % display_original.length;
+			}
+			function nextindex(){
+				return (indexes[0]+1) % display_original.length;
 			}
 			$(".arrow.left").click(function(){
 				blowup(display_original[previndex()].name, display_original);
